@@ -1,0 +1,139 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+/*padding: Añade 20px de espacio interno en todos los lados.*/
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #666;
+}
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    font-size: 1.8em;
+}
+/*a: Estiliza los enlaces con un color azul (#007BFF) y elimina el subrayado predeterminado.*/
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+/*a:hover Cambia el estilo del enlace cuando se pasa el cursor sobre él, añadiendo un subrayado.*/
+a:hover {
+    text-decoration: underline;
+}
+
+/*display: grid: Establece que el contenedor usa CSS Grid para organizar sus elementos.
+gap: Añade 20px de espacio entre los elementos de la cuadrícula.*/
+.grid-container {
+    display: grid;
+    gap: 20px;
+}
+/*display: Hace que la imagen sea un bloque para evitar el espacio adicional debajo de la imagen.*/
+.proyecto img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.proyecto {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Diseño con CSS Grid */
+
+/*display: grid: Convierte el cuerpo del documento en una cuadrícula.
+grid-template-areas: Define las áreas de la cuadrícula. Cada fila tiene un área asignada.
+grid-template-rows: Establece la altura de las filas: la primera y la última fila son automáticas 
+(ajustadas al contenido), mientras que las del medio ocupan el espacio restante.
+gap: Añade un espacio de 20px entre las áreas de la cuadrícula.*/
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "sobre-mi"
+        "proyectos"
+        "contacto"
+        "footer";
+    grid-template-rows: auto 1fr 1fr 1fr auto;
+    gap: 20px;
+}
+
+header {
+    grid-area: header;
+}
+
+#sobre-mi {
+    grid-area: sobre-mi;
+}
+
+#proyectos {
+    grid-area: proyectos;
+}
+
+#contacto {
+    grid-area: contacto;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* Responsividad */
+/*@media (min-width: 768px): Aplica estilos para pantallas con un ancho mínimo de 768px.
+grid-template-columns: Define dos columnas de igual ancho para la cuadrícula de proyectos.*/
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/*@media (min-width: 1024px): Aplica estilos para pantallas con un ancho mínimo de 1024px.
+grid-template-columns: Define tres columnas de igual ancho para la cuadrícula de proyectos.*/
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+footer .whatsapp-button {
+    margin-left: 10px;
+}
+
+footer img {
+    vertical-align: middle; /* Alinea la imagen con el texto */
+}
+
